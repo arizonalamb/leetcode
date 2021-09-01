@@ -1,0 +1,58 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        result = 0
+        pull = ''
+        for ind in range(0, len(s)):
+            if s[ind] == 'I':
+                result += 1
+    #            print('It was I, result =', result)
+
+            if s[ind] == 'V':
+                if (s[ind-1] == 'I') and (ind-1 != -1):
+                    result += 3
+    #                print('It was IV, result =', result)
+                else:
+                    result += 5
+    #                print('It was V, result =', result)
+
+            if s[ind] == 'X':
+                if (s[ind-1] == 'I') and (ind-1 != -1):
+                    result += 8
+    #                print('It was IX, result =', result)
+                else:
+                    result += 10
+    #                print('It was X, result =', result)
+
+            if s[ind] == 'L':
+                if (s[ind-1] == 'X') and (ind-1 != -1):
+                    result += 30
+    #                print('It was XL, result =', result)
+                else:
+                    result += 50
+    #                print('It was L, result =', result)
+
+            if s[ind] == 'C':
+                if (s[ind-1] == 'X') and (ind-1 != -1):
+                    result += 80
+    #                print('It was XC, result =', result)
+                else:
+                    result += 100
+    #                print('It was C, result =', result)
+
+            if s[ind] == 'D':
+                if (s[ind-1] == 'C') and (ind-1 != -1):
+                    result += 300
+    #                print('It was CD, result =', result)
+                else:
+                    result += 500
+    #                print('It was D, result =', result)
+
+            if s[ind] == 'M':
+                if (s[ind-1] == 'C') and (ind-1 != -1):
+                    result += 800
+    #                print('It was CM, result =', result)
+                else:
+                    result += 1000
+    #                print('It was M, result =', result)
+
+        return result
