@@ -1,0 +1,29 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        closing = (")]}")
+        stack = []
+
+        if (s[-1] not in closing):
+            return False
+
+        for obj in s:
+            if obj not in closing:
+                stack.append(obj)
+            else:
+                try:
+    #                print(stack, obj)
+                    if (obj == ")") and stack[-1] != "(":
+                        return False
+                    if (obj == "]") and stack[-1] != "[":
+                        return False
+                    if (obj == "}") and stack[-1] != "{":
+                        return False
+                    else:
+                        stack.pop()
+                except:
+                    return False 
+
+        if len(stack) != 0:
+            return False
+
+        return True
