@@ -1,0 +1,11 @@
+def removeDuplicates(nums):   
+    uniq = 1
+    for ind in range(1, len(nums)):
+        if nums[ind] != nums[ind - 1]:
+            nums[uniq] = nums[ind]
+            uniq += 1
+    return f"{uniq} {nums}"
+
+def local_replace(uniq, ind, nums):
+    nums[uniq] = nums[ind]
+    return nums
