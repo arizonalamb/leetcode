@@ -1,0 +1,9 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        ind = len(nums)-1
+        while ind != -1:
+            if nums[ind] == val:
+                nums.pop(ind)
+            ind -= 1
+    #        print('current ind:', ind, nums)
+        return len(nums), nums
