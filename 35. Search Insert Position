@@ -1,1 +1,22 @@
-///
+def searchInsert(nums, target):
+    maxx = len(nums)
+    minn = 0
+    mid = int(maxx/2)
+    while True:
+        print(nums[mid], minn, maxx)
+        if target == nums[mid]:
+#            print(mid)
+            return mid
+        if nums[mid] < target:
+#            print(nums[mid], target)
+            minn = mid
+            mid = int((maxx+minn)/2)
+        if nums[mid] > target:
+#            print(maxx, minn)
+            maxx = mid
+            mid = int((maxx+minn)/2)
+        if (target < nums[0]) or (target == nums[0]):
+            return 0
+        if (maxx-minn==1):
+#            print('maxx-minn', maxx)
+            return maxx
