@@ -5,6 +5,8 @@ def removeDuplicates(nums):
             nums[uniq] = nums[ind]
             uniq += 1
     return f"{uniq} {nums}"
+    
+    
 
 def local_replace(uniq, ind, nums):
     nums[uniq] = nums[ind]
