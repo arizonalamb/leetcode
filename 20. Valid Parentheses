@@ -11,7 +11,6 @@ class Solution:
                 stack.append(obj)
             else:
                 try:
-    #                print(stack, obj)
                     if (obj == ")") and stack[-1] != "(":
                         return False
                     if (obj == "]") and stack[-1] != "[":
