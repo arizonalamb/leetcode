@@ -19,9 +19,7 @@ class Solution:
 
         for item in tmp_dict.items():
             if (len(item[0]) >= max_string) and (item[1] >= max_counter):
-    #            print(item)
                 max_string = len(item[0])
                 max_counter = item[1]
-    #            print(max_string, max_counter)
                 result_string = item[0]
         return result_string
