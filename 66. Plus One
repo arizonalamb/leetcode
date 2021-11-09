@@ -1,1 +1,28 @@
-###
+# my solution
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        degree = len(digits)-1
+        number_of_digits = 0
+        final_array = []
+
+
+        for num in digits:
+            number_of_digits += int(str(num) + ('0' * degree))
+            degree -= 1
+
+        number_of_digits += 1
+
+        for num in str(number_of_digits):
+            final_array.append(int(num))
+        return final_array
+  
+# it's better
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        n = len(digits)
+        for i in range(n-1, -1, -1):
+            if digits[i] < 9:
+                digits[i] += 1
+                return digits
+            digits[i] = 0
+        return [1] + [0] * n
