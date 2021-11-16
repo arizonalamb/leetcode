@@ -1,1 +1,14 @@
-№№
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        prev = 0
+        cur = 1
+        iter = 0
+
+        while iter < n:
+
+            final = prev + cur
+
+            prev = cur
+            cur = final
+            iter += 1
+        return final
